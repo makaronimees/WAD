@@ -1,2 +1,1 @@
-# WAD
-Repository for the Web Apllication Development course
+# Practical session 1
