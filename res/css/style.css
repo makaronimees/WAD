@@ -1,16 +1,38 @@
-nav{
-    background-color: aqua; /*testing out*/
-}
-
 .login {
     text-align: center;
     background-color: rgb(185, 185, 185);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
 }
 
-form > button{
+form > button {
     background-color: blue;
     color: #ffffff;
+}
+
+.gray {
+    background-color: #646174;
+}
+
+nav a {
+    padding: 10px 15px;
+    text-align: center;
+    color: #000000;
+}
+
+nav a:hover {
+    background-color: #7ebeb6;
+    color: #092747;
+}
+
+header {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border: 1px solid #646174;
+    background-color: #a2ccea;
+    border-radius: 5px;
 }
