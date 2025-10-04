@@ -1,12 +1,26 @@
-.login {
+.login, .newPost {
     text-align: center;
-    background-color: rgb(185, 185, 185);
+    background-color: rgb(219, 219, 219);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     width: fit-content;
     padding: 10px;
     margin: auto;
+}
+
+#logo {
+    width: 55px;
+    height: 55px;
+}
+
+.newPost {
+    text-align: left;
+}
+
+.postText {
+    height: 100px;
+
 }
 
 form > button {
@@ -16,6 +30,9 @@ form > button {
 
 .gray {
     background-color: #646174;
+}
+.blue {
+    color: #1c9ffc;
 }
 
 nav a {
