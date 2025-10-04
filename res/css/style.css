@@ -1,3 +1,16 @@
 nav{
     background-color: aqua; /*testing out*/
 }
+
+.login {
+    text-align: center;
+    background-color: rgb(185, 185, 185);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+form > button{
+    background-color: blue;
+    color: #ffffff;
+}
