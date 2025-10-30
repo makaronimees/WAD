@@ -39,6 +39,46 @@
       "postPicture": "res/images/tartu3.jpeg",
       "postCaption": "Tartu University",
       "postFooter": "👍"
+    }, 
+    {
+      "date": "Oct 8, 2025",
+      "authorName": "",
+      "profilePicture": "res/images/pfp.png",
+      "postPicture": "",
+      "postCaption": "How many people would like to attend our extra study session?",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 10, 2025",
+      "authorName": "",
+      "profilePicture": "res/images/pfp.png",
+      "postPicture": "",
+      "postCaption": "Is the cafeteria still closed?",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 11, 2025",
+      "authorName": "",
+      "profilePicture": "res/images/pfp.png",
+      "postPicture": "res/images/delta1.jpeg",
+      "postCaption": "Delta today",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 14, 2025",
+      "authorName": "",
+      "profilePicture": "res/images/pfp.png",
+      "postPicture": "",
+      "postCaption": "Has anyone else not receieved their grade yet?",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 15, 2025",
+      "authorName": "",
+      "profilePicture": "res/images/pfp.png",
+      "postPicture": "",
+      "postCaption": "We're making free pancakes today near the front entrance!",
+      "postFooter": "👍"
     }
   ]
 }
