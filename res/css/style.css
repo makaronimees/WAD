@@ -108,6 +108,12 @@ header {
   margin-bottom: 6px;
 }
 
+.post-header-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .profile-pic {
   width: 28px;
   height: 28px;
@@ -175,6 +181,10 @@ footer{
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.author {
+  margin-left: 0px;
 }
 @media (max-width: 600px) {
   .midpart {

@@ -24,7 +24,7 @@ async function loadPosts() {
 
     middle.innerHTML = ''; // clear previous posts
 
-    for (let i = 0; i < howMany; i++) {//we will iterate through all posts
+    for (let i = howMany-1; i >= 0; i--) {//we will iterate through all posts
         //console.log(i);
         const postData = posts1[i];
         //console.log(postData);
@@ -41,9 +41,11 @@ async function loadPosts() {
         post.innerHTML = `
             <div class="post-card">
                 <div class="post-header">
-                    <img src="${postData.profilePicture}" alt="Profile picture" class="profile-pic">
+                    <div class="post-header-left">
+                      <img src="${postData.profilePicture}" alt="Profile picture" class="profile-pic">
+                      ${authorName}
+                    </div>
                     <span class="date">${postData.date}</span>
-                    ${authorName}
                 </div>
             ${postImageHtml}
           <div class="post-caption">${postData.postCaption}</div>
