@@ -4,7 +4,7 @@ async function loadPosts() {
   const middle = document.querySelector('.middle');//class that contains posts
 
 
-  try {
+  try {//github isnt cooperating
     const res = await fetch('https://makaronimees.github.io/WAD/posts.json');
     
     if (!res.ok) {
