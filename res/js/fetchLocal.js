@@ -5,7 +5,7 @@ async function loadPosts() {
 
 
   try {
-    const res = await fetch('./posts.json');
+    const res = await fetch('https://makaronimees.github.io/WAD/posts.json');
     
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
@@ -13,9 +13,10 @@ async function loadPosts() {
   
 
   const data = await res.json();
-  const posts1= data.record;
+  console.log(data);
+  const posts1= data.posts;
   //console.log(posts1.posts);
-  let howMany=posts1.posts.length;
+  let howMany=posts1.length;
   //console.log("mul on" + howMany);
   
   
@@ -25,7 +26,7 @@ async function loadPosts() {
 
     for (let i = 0; i < howMany; i++) {//we will iterate through all posts
         //console.log(i);
-        const postData = posts1.posts[i];
+        const postData = posts1[i];
         //console.log(postData);
 
         const post = document.createElement('div');
