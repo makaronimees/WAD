@@ -1,9 +1,10 @@
 async function loadPosts() {
-  const middle = document.querySelector('.middle');
-  console.log("Script running...");
+  const middle = document.querySelector('.middle');//class that contains posts
+
 
   try {
     const res = await fetch('https://api.jsonbin.io/v3/b/690351b843b1c97be98c1712');
+    //sadly couldnt get it to work with private bin
 
   if(!res.ok) {
     throw new Error(`'Request failed with status code: ${res.status}`);
@@ -11,17 +12,16 @@ async function loadPosts() {
 
   const data = await res.json();
   const posts1= data.record;
-  console.log("joudsin siia")
-  console.log(posts1.posts);
+  //console.log(posts1.posts);
   let howMany=posts1.posts.length;
-  console.log("mul on" + howMany);
+  //console.log("mul on" + howMany);
   
   
   
 
-    middle.innerHTML = ''; // Clear previous posts
+    middle.innerHTML = ''; // clear previous posts
 
-    for (let i = 0; i < howMany; i++) {
+    for (let i = 0; i < howMany; i++) {//we will iterate through all posts
         //console.log(i);
         const postData = posts1.posts[i];
         //console.log(postData);
