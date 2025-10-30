@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "date": "Oct 1, 2025",
+      "authorName": "",
+      "profilePicture": "/res/images/pfp.png",
+      "postPicture": "/res/images/tartu1.jpg",
+      "postCaption": "Tartu in winter",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 3, 2025",
+      "authorName": "",
+      "profilePicture": "/res/images/pfp.png",
+      "postPicture": "",
+      "postCaption": "Does anyone know in which room the lab is today?",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 4, 2025",
+      "authorName": "",
+      "profilePicture": "/res/images/pfp.png",
+      "postPicture": "/res/images/tartu2.jpg",
+      "postCaption": "Tartu 2024 sign in Tartu raekoja plats",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 4, 2025",
+      "authorName": "",
+      "profilePicture": "/res/images/pfp.png",
+      "postPicture": "",
+      "postCaption": "Can anyone please tell me when our assignment is due?",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 5, 2025",
+      "authorName": "",
+      "profilePicture": "/res/images/pfp.png",
+      "postPicture": "/res/images/tartu3.jpeg",
+      "postCaption": "Tartu University",
+      "postFooter": "👍"
+    }
+  ]
+}
