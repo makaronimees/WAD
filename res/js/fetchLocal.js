@@ -5,7 +5,7 @@ async function loadPosts() {
 
 
   try {//github isnt cooperating
-    const res = await fetch('./posts.json');
+    const res = await fetch('WAD/posts.json');
     
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
