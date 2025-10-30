@@ -5,7 +5,7 @@ async function loadPosts() {
 
 
   try {
-    const res = await fetch('../../posts.json');
+    const res = await fetch('/posts.json');
     
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
