@@ -3,8 +3,8 @@
     {
       "date": "Oct 1, 2025",
       "authorName": "",
-      "profilePicture": "/res/images/pfp.png",
-      "postPicture": "/res/images/tartu1.jpg",
+      "profilePicture": "res/images/pfp.png",
+      "postPicture": "res/images/tartu1.jpg",
       "postCaption": "Tartu in winter",
       "postFooter": "👍"
     },
