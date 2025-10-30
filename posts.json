@@ -69,7 +69,7 @@
       "authorName": "",
       "profilePicture": "res/images/pfp.png",
       "postPicture": "",
-      "postCaption": "Has anyone else not receieved their grade yet?",
+      "postCaption": "Has anyone else not received their grade yet?",
       "postFooter": "👍"
     },
     {
@@ -78,6 +78,14 @@
       "profilePicture": "res/images/pfp.png",
       "postPicture": "",
       "postCaption": "We're making free pancakes today near the front entrance!",
+      "postFooter": "👍"
+    },
+    {
+      "date": "Oct 16, 2025",
+      "authorName": "",
+      "profilePicture": "res/images/pfp.png",
+      "postPicture": "res/images/delta2.jpg",
+      "postCaption": "Emajõgi this morning",
       "postFooter": "👍"
     }
   ]
