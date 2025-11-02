@@ -13,11 +13,19 @@
             <div class="links">
             <a href="index.html">Home</a>
             <a href="addPost.html">AddPost</a>
+             <a href="Login.html">Login</a>
             </div>
-            <a href="Login.html"> 
-                <img src="res/images/pfp.png"  id="logo" alt="My picture">
-            </a>
-            </nav>
+            <div class="nav-right">
+                <div class="profile">
+                    <img src="res/images/pfp.png" alt="Profile" class="profile-pic" id="profilePic">
+                        <div class="dropdown" id="dropdownMenu">
+                            <p><strong>John Doe</strong></p>
+                            <p>john.doe@ut.ee</p>
+                            <button id="logoutBtn">logout</button>
+                        </div>
+                </div>
+            </div>
+        </nav>
         </header>
         <div class="midpart">
             <div class="sidebar">
@@ -100,5 +108,6 @@
         <footer>
             <h1>Footer</h1>
         </footer>
+        <script src="res/js/script.js"></script>
     </body>
 </html>

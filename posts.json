@@ -3,15 +3,15 @@
     {
       "date": "Oct 1, 2025",
       "authorName": "Kriset",
-      "profilePicture": "res/images/pfp.png",
-      "postPicture": "res/images/tartu1.jpg",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
+      "postPicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/tartu1.jpg",
       "postCaption": "Tartu in winter",
       "postFooter": "👍"
     },
     {
       "date": "Oct 3, 2025",
       "authorName": "Pilleriin",
-      "profilePicture": "res/images/pfp.png",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
       "postPicture": "",
       "postCaption": "Does anyone know in which room the lab is today?",
       "postFooter": "👍"
@@ -19,15 +19,15 @@
     {
       "date": "Oct 4, 2025",
       "authorName": "Anne-Liine",
-      "profilePicture": "res/images/pfp.png",
-      "postPicture": "res/images/tartu2.jpg",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
+      "postPicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/tartu2.jpg",
       "postCaption": "Tartu 2024 sign in Tartu raekoja plats",
       "postFooter": "👍"
     },
     {
       "date": "Oct 4, 2025",
       "authorName": "Kriset",
-      "profilePicture": "res/images/pfp.png",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
       "postPicture": "",
       "postCaption": "Can anyone please tell me when our assignment is due?",
       "postFooter": "👍"
@@ -35,15 +35,15 @@
     {
       "date": "Oct 5, 2025",
       "authorName": "Anne-Liine",
-      "profilePicture": "res/images/pfp.png",
-      "postPicture": "res/images/tartu3.jpeg",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
+      "postPicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/tartu3.jpeg",
       "postCaption": "Tartu University",
       "postFooter": "👍"
     }, 
     {
       "date": "Oct 8, 2025",
       "authorName": "Kriset",
-      "profilePicture": "res/images/pfp.png",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
       "postPicture": "",
       "postCaption": "How many people would like to attend our extra study session?",
       "postFooter": "👍"
@@ -51,7 +51,7 @@
     {
       "date": "Oct 10, 2025",
       "authorName": "Pilleriin",
-      "profilePicture": "res/images/pfp.png",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
       "postPicture": "",
       "postCaption": "Is the cafeteria still closed?",
       "postFooter": "👍"
@@ -59,15 +59,15 @@
     {
       "date": "Oct 11, 2025",
       "authorName": "Anne-Liine",
-      "profilePicture": "res/images/pfp.png",
-      "postPicture": "res/images/delta1.jpg",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
+      "postPicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/delta1.jpg",
       "postCaption": "Delta today",
       "postFooter": "👍"
     },
     {
       "date": "Oct 14, 2025",
       "authorName": "Kriset",
-      "profilePicture": "res/images/pfp.png",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
       "postPicture": "",
       "postCaption": "Has anyone else not received their grade yet?",
       "postFooter": "👍"
@@ -75,7 +75,7 @@
     {
       "date": "Oct 15, 2025",
       "authorName": "Anne-Liine",
-      "profilePicture": "res/images/pfp.png",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
       "postPicture": "",
       "postCaption": "We're making free pancakes today near the front entrance!",
       "postFooter": "👍"
@@ -83,8 +83,8 @@
     {
       "date": "Oct 16, 2025",
       "authorName": "Pilleriin",
-      "profilePicture": "res/images/pfp.png",
-      "postPicture": "res/images/delta2.jpg",
+      "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
+      "postPicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/delta2.jpg",
       "postCaption": "Emajõgi this morning",
       "postFooter": "👍"
     }
