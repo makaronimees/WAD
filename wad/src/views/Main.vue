@@ -8,8 +8,12 @@
 
 
 <script>
+import Post from '@/components/Post.vue'
 
 export default {
-  name: 'Main'
+  name: 'Main',
+  components: {
+    Post
+  }
 }
 </script>
