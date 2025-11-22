@@ -4,16 +4,18 @@
     <p> mjau </p>
 </div>
 
+<AllPosts/>
+
 </template>
 
 
 <script>
-import Post from '@/components/Post.vue'
+import AllPosts from '@/components/AllPosts.vue';
 
 export default {
   name: 'Main',
   components: {
-    Post
+    AllPosts,
   }
 }
 </script>

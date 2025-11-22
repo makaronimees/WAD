@@ -1,26 +1,29 @@
 <template>
 
-<div class="post-card">
-    <div class="post-header">
-        <div class="post-header-left">
-            <img :src="post.profilePicture" alt="Profile picture" class="profile-pic">
-            {{ post.authorName }}
-        </div>
-        <span class="date">{{ post.date }}</span>
-    </div>
-    {{post.postImageHtml}}
-    <div class="post-caption">{{post.postData.postCaption}}</div>
-    <div class="post-footer">{{post.postData.postFooter}}</div>
-</div>
+<div id="mjau">
+<label for="title">authorName: </label>
+<input name="type" type="text" id="author" required v-model="post.authorName" />
+<label for="body">postCaption: </label>
+<input name="body" type="text" id="caption" required v-model="post.postCaption" />
+<label for="url">postFooter: </label>
+<input name="url" type="text" id="footer" required v-model="post.postFooter" />
+<label for="url">postImageHtml: </label>
+<input name="url" type="text" id="image" required v-model="post.postImageHtml" />
+</div> 
 
 </template>
 
 <script>
 export default {
-  name: 'Post',
-  props: {
-    postId: Number
-  }
+  name: "Post",
+  data() {return {post: {id: "", authorName: "", date: "", postCaption: "", postFooter: "", postImageHtml: ""}, }; },
+  methods: {
+    fetchAPost(id) {
+      fetch(`http://localhost:3000/posts/${id}`)
+      .then((response) => response.json())
+      .then((data) => (this.post = data))
+      .catch((err) => console.log(err.message));},
+  mounted() { this.fetchAPost(this.$route.params.id);},}
 }
 </script>
 

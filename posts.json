@@ -1,6 +1,7 @@
 {
   "posts": [
     {
+      "id": 1,
       "date": "Oct 1, 2025",
       "authorName": "Kriset",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -9,6 +10,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 2,
       "date": "Oct 3, 2025",
       "authorName": "Pilleriin",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -17,6 +19,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 3,
       "date": "Oct 4, 2025",
       "authorName": "Anne-Liine",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -25,6 +28,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 4,
       "date": "Oct 4, 2025",
       "authorName": "Kriset",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -33,6 +37,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 5,
       "date": "Oct 5, 2025",
       "authorName": "Anne-Liine",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -41,6 +46,7 @@
       "postFooter": "👍"
     }, 
     {
+      "id": 6,
       "date": "Oct 8, 2025",
       "authorName": "Kriset",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -49,6 +55,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 7,
       "date": "Oct 10, 2025",
       "authorName": "Pilleriin",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -57,6 +64,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 8,
       "date": "Oct 11, 2025",
       "authorName": "Anne-Liine",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -64,7 +72,7 @@
       "postCaption": "Delta today",
       "postFooter": "👍"
     },
-    {
+    {"id": 9,
       "date": "Oct 14, 2025",
       "authorName": "Kriset",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -73,6 +81,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 10,
       "date": "Oct 15, 2025",
       "authorName": "Anne-Liine",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
@@ -81,6 +90,7 @@
       "postFooter": "👍"
     },
     {
+      "id": 11,
       "date": "Oct 16, 2025",
       "authorName": "Pilleriin",
       "profilePicture": "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png",
