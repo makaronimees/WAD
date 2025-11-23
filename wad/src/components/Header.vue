@@ -1,5 +1,6 @@
 <template>
 <div class="header">
+  <h2>PostIT</h2>
   <nav>
     <router-link to="/">Main</router-link> |
     <router-link to="/signup">Signup</router-link>
@@ -16,18 +17,21 @@ export default {
 <style>
 
 @media (max-width: 800px) {
-    header, nav, .links {
+    .header, nav, .links {
         display: flex;
     }
-    header {
+    .header {
         flex-direction: column;
         align-items: center;
+        
     }
 }
 
 nav {
   padding: 30px;
   font-weight: bold;
+  
+
 }
 
 nav a {
@@ -39,14 +43,18 @@ nav a {
 nav a:hover {
     background-color: #7ebeb6;
     color: #092747;
+    border-radius:5px ;
 }
 
-header {
+.header {
     padding-top: .5em;
     padding-bottom: .5em;
     border: 1px solid #646174;
     background-color: #7871AA;
     border-radius: 5px;
+}
+h2{
+  color:cornsilk;
 }
 
 </style>

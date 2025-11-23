@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer">
     <p>&copy; 2025.</p>
     <p>Built with Vue.js.</p>
   </div>
@@ -13,7 +13,7 @@ export default {
 
 <style>
 
-footer{
+.footer{
     border: 1px solid #646174;
     background-color: #7871AA;
     border-radius: 5px;

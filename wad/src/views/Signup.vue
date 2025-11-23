@@ -1,7 +1,8 @@
 <template>
 
 <div class="signup">
-    <p> meow </p>
+  
+    
 </div>
 
 <Form/>
@@ -11,12 +12,17 @@
 
 <script>
 import Form from '@/components/Form.vue';
-
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'Signup',
   components: {
-    Form
+    Header,
+    Form,
+    Footer
+    
   }
 }
+
 </script>
