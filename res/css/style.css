@@ -101,9 +101,7 @@ header {
     margin: 30px;
 }
 
-.post1 ~ div .post-card {
-    background-color: pink;
-}
+
 
 .post-header {
   display: flex;
@@ -252,4 +250,3 @@ footer{
     margin: 10px auto;
   }
 }
-
