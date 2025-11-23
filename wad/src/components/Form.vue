@@ -13,7 +13,7 @@
 
   </p>
     <button type="submit" value="Submit">Signup</button>
-    <!--<p><input type="submit" value="Submit"></p>-->
+
 
 </form>
 </div>
@@ -33,50 +33,55 @@ export default {
   },
   methods:{
     checkPassword(e) {
-      this.errors = [];
-      //checking if user inputted anything
+      this.errors = [];//array to save all the problems
     
-      if(!(this.password.charAt(0)==this.password.charAt(0).toUpperCase)) {
+      if(!(this.password.charAt(0)==this.password.charAt(0).toUpperCase())) {
         this.errors.push("First letter is not capitalized!");
       }
       //making variables for saving info about conditions
-      var twoLower=0;
-      var oneUpper=false;
-      var lowerDash=false;
-      var numbers=false;
+      let twoLower=0;
+      let oneUpper=false;
+      let lowerDash=false;
+      let numbers=false;
     
       for(let i=0;i<this.password.length;i++){
         if((twoLower>=2 && oneUpper && lowerDash && numbers)){
           break;
         }
-        let element=this.password.charAt(i);
-        if(!isNaN(element)){
-          numbers=true;
-        }
-        else{
-          if((element=="_")){
-          lowerDash=true;
-        }
-        else{
-        if((element.charAt(i)==element.charAt(i).toUpperCase)){
-          oneUpper=true;
-        }
-
         
-        if((element.charAt(i)==element.charAt(i).toLowerCase)){
-          twoLower++;
+        else {
+          let element=this.password.charAt(i);//saving it as a variable so its easier to read
+    
+          if(!isNaN(element)){//first checking if its a number, so it hopefully doesnt try to convert numbers to uppercase etc
+            numbers=true;
+          }
+
+          else{
+            if((element.localeCompare("_")==0)){
+              lowerDash=true;
+            }
+            else{
+              if((element.localeCompare(element.toUpperCase())==0)){
+                oneUpper=true;
+              }
+
+              if((element.localeCompare((element.toLowerCase()))==0)){
+                twoLower++;
+              }
+            }
+          }
         }
+      
       }
-      }
-      }
+      //now lets let the user know why their passowrd sucks
       if((twoLower<2)){
         this.errors.push("Does not contain 2 lowercase letters!");
       }
       if(!oneUpper){
-        this.errors.push("Does not contain 1 uppercase letters!");
+        this.errors.push("Does not contain 1 uppercase letter!");
       }
       if(!lowerDash){
-        this.errors.push("Does not contain '_' character!");
+        this.errors.push('Does not contain "_" character!');
       }
       if(!numbers){
         this.errors.push("Does not contain 1 number!");
