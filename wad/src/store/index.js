@@ -38,7 +38,7 @@ export default createStore({
     async fetchPosts({ commit }) {
       const res = await fetch("http://localhost:3000/posts");
       const data = await res.json();
-      commit("setPosts", data); // <-- FIXED
+      commit("setPosts", data); 
     }
   }
 });
