@@ -1,17 +1,25 @@
 <template>
 <div class="header">
   <h2>PostIT</h2>
+  <!-- this should only be true if the person isn't logged in yet, otherwise it isn't visible -->
+  <div v-if="true"> <button class="loginButton" @click="goToLogin">Login</button> </div>
   <nav>
     <router-link to="/">Main</router-link> |
-    <router-link to="/signup">Signup</router-link>
+    <router-link to="/contacts">Contacts</router-link>
   </nav>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    goToLogin() {
+      this.$router.push('/login')
+    }
+  }
 }
+
 </script>
 
 <style>
@@ -55,6 +63,17 @@ nav a:hover {
 }
 h2{
   color:cornsilk;
+}
+
+.loginButton {
+  color: #7871AA;
+  background-color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 </style>

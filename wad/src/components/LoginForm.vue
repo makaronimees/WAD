@@ -1,24 +1,22 @@
 <template>
 
-<div class="signupform">
-<form id="signUp" @submit="checkPassword"> 
-    <p>Email: <input id="email" v-model="email" type="text" required></p>
-    <p>Password: <input id="password" v-model="password" type="text" required minlength="8" maxlength="15"></p>
+<div class="loginform">
+<form id="logIn" @submit="checkPassword"> 
+    <p>Email: <input id="email" v-model="email" type="text" ></p>
+    <p>Password: <input id="password" v-model="password" type="text"  minlength="8" maxlength="15"></p>
     
     <p v-if="errors.length">
-    <b>Password is not valid!:</b>
-    <p>
-      <p v-for="error in errors">{{ error }}</p>
-    </p>
-
+    <b>Login unsuccessful! Please check your email or password</b>
   </p>
-    <button type="submit" value="Submit">Signup</button>
-
+    <button type="submit" value="Submit">Login</button>
+    Or
+    <button @click="goToSignup">Signup</button>
 
 </form>
 </div>
 
 </template>
+
 
 <script>
 //checking inputs
@@ -32,6 +30,9 @@ export default {
     }
   },
   methods:{
+    goToSignup() {
+        this.$router.push('/signup')
+    },
     checkPassword(e) {
       this.errors = [];//array to save all the problems
     
@@ -93,8 +94,10 @@ export default {
 }
 
 </script>
+
+
 <style>
-.signupform{
+.loginform{
   text-align: center;
     background-color: rgb(219, 219, 219);
     border-radius: 10px;
