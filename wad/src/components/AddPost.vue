@@ -3,8 +3,9 @@
         <h3>Add a Post</h3>
         <label for="title">Caption: </label>
         <input name="title" type="text" id="postcaption" required v-model="postcaption" />
-        <button @click="addPost" class="addPost">Add Post</button>
-</div>
+    </div>
+    <button @click="addPost" class="addPost">Add</button>
+
 </template>
 <script>
 export default {
@@ -24,5 +25,35 @@ export default {
             console.log("error");});},},};
 </script>
 <style>
+form {
+  text-align: center;
+    background-color: rgb(219, 219, 219);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 30px;
+    margin-bottom: 20px; 
+}
 
+button {
+    background-color:lightsteelblue;
+    color: black;
+    border-radius: 5px;
+    min-width: 100px;
+    min-height: 30px;
+    border-color:rgb(152, 169, 192);
+    margin:30px;
+}
+form > p {
+    color:black;
+    text-align: left;
+}
+form > input {
+    border-radius: 5px;
+    border-color: lightsteelblue;
+    min-height: 20px;
+    color:gray;
+    
+}
 </style>

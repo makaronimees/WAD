@@ -7,8 +7,8 @@
     <input name="body" type="text" id="postcaption" required v-model="postcaption" />
 </div> 
 <div>
-    <button @click="updatePost" class="updatePost">Update Post</button>
-    <button @click="deletePost" class="deletePost">Delete Post</button>
+    <button @click="updatePost" class="updatePost">Update</button>
+    <button @click="deletePost" class="deletePost">Delete</button>
 </div>
 </div>
 </template>
@@ -40,3 +40,40 @@ export default {
             .catch((e) => {console.log(e); }); },},
         mounted() { this.fetchAPost(this.$route.params.id);},};
 </script>
+
+<style>
+form {
+  text-align: center;
+    background-color: rgb(219, 219, 219);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 30px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+button {
+    background-color:lightsteelblue;
+    color: black;
+    border-radius: 5px;
+    min-width: 100px;
+    min-height: 30px;
+    border-color:rgb(152, 169, 192);
+    margin:30px;
+}
+form > p {
+    color:black;
+    text-align: left;
+}
+form > input {
+    border-radius: 5px;
+    border-color: lightsteelblue;
+    min-height: 20px;
+    color:gray;
+    
+}
+
+</style>
