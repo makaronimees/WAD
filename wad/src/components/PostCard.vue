@@ -1,5 +1,5 @@
 <template>
-  <RouterLink :to="{ name: 'APost', params: { id: post.id } }" class="vue-post-card">
+  <RouterLink :to="{ name: 'EditPost', params: { id: post.id } }" class="vue-post-card">
     <div class="vue-post-header">
       <div class="vue-post-header-left">
         <img :src="post.profilepicture" class="vue-profile-pic" />

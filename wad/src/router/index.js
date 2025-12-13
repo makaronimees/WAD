@@ -3,9 +3,8 @@ import Main from '@/views/Main.vue'
 import Signup from '@/views/Signup.vue'
 import Login from '../views/Login.vue'
 import Contact from '../views/Contacts.vue'
-import APost from '../views/APost.vue'
-import AddPost from '../views/AddPost.vue'
-import Post from '../views/Post.vue'
+import EditPost from '../views/EditPost.vue'
+import AddAPost from '../views/AddAPost.vue'
 
 const routes = [
   {
@@ -29,25 +28,16 @@ const routes = [
     component: Contact
   },
   {
-    path: '/apost/:id',
-    name: 'APost',
-    component: APost,
+    path: '/post/:id',
+    name: 'EditPost',
+    component: EditPost,
     props: true
   },
-  /* pille branch
   {
     path: '/addpost',
-    name: 'AddPost',
-    component: AddPost
-  },
-  {
-    path: '/post/:id',
-    name: 'Post',
-    component: Post,
-    props: true
-   
+    name: 'AddAPost',
+    component: AddAPost
   }
-    */
 ]
 
 const router = createRouter({

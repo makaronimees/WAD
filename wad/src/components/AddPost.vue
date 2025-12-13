@@ -1,22 +1,19 @@
 <template>
     <div class="form">
         <h3>Add a Post</h3>
-        <label for="title">Title: </label>
-        <input name="title" type="text" id="title" required v-model="post.title" />
-        <label for="body">Body: </label>
-        <input name="body" type="text" id="body" required v-model="post.body" />
-        <label for="urllink">Url: </label>
-        <input name="urllink" type="text" id="urllink" required v-model="post.urllink"/>
+        <label for="title">Caption: </label>
+        <input name="title" type="text" id="postcaption" required v-model="postcaption" />
         <button @click="addPost" class="addPost">Add Post</button>
 </div>
 </template>
 <script>
 export default {
     name: "AddPost",
-        data() {return { post: {title: "", body: "", urllink: "", }, }; },
+        data() {return { post: {authorName: "Kriset", date: "", profilePicture: "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png", postCaption: "" }, }; },
     methods: {
         addPost() {
-            var data = {title: this.post.title, body: this.post.body, urllink: this.post.urllink,};
+            var postcaption = document.getElementById("postcaption").value
+            var data = {authorname: this.post.authorName, date: this.post.date, profilepicture: this.post.profilePicture, postcaption: postcaption, postimagehtml: this.post.postpicture};
             fetch("http://localhost:3000/api/posts", {
                 method: "POST",
                 headers: {"Content-Type": "application/json", },

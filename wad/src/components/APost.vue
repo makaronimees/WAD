@@ -2,12 +2,8 @@
 <div class="A Post">
     <div id="form">
     <h3>A Post</h3>
-    <label for="title">Title: </label>
-    <input name="type" type="text" id="title" required v-model="post.title" />
     <label for="body">Body: </label>
-    <input name="body" type="text" id="body" required v-model="post.body" />
-    <label for="url">Url: </label>
-    <input name="url" type="text" id="url" required v-model="post.urllink" />
+    <input name="body" type="text" id="postcaption" required v-model="postcaption" />
 </div> 
 <div>
     <button @click="updatePost" class="updatePost">Update Post</button>
@@ -16,9 +12,10 @@
 </div>
 </template>
 <script>
+
 export default {
     name: "APost",
-    data() {return {post: {id: "", title: "", body: "", urllink: "", }, }; },
+    data() {return {post: {id: "", authorname: "", date: "", postcaption: "", postfooter: "", postpicture: "", }, }; },
     methods: {
         fetchAPost(id) {
             fetch(`http://localhost:3000/api/posts/${id}`)
@@ -31,7 +28,7 @@ export default {
                 method: "PUT", headers: { "Content-Type": "application/json", },
                 body: JSON.stringify(this.post),})
             .then((response) => {console.log(response.data);
-                this.$router.push("/"); })
+            this.$router.push("/");})
             .catch((e) => {console.log(e); });},
         deletePost() {
             fetch(`http://localhost:3000/api/posts/${this.post.id}`, {

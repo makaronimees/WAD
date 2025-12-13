@@ -8,7 +8,7 @@
     import Footer from '@/components/Footer.vue';
     import AddPost from '../components/AddPost.vue';
     export default {
-        name: 'AddPost',
+        name: 'AddAPost',
         components: {
             Header,
             AddPost,
