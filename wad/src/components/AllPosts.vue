@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 import PostCard from "./PostCard.vue";
 
 export default {
@@ -18,12 +17,17 @@ export default {
   components: {
     PostCard
   },
-
-  computed: {
-    ...mapGetters(["allPosts"]),
-    posts() {
-      return this.allPosts;
+  data:  function() {
+    return {
+    posts:[ ],
     }
+  },
+
+  mounted() {
+      fetch('http://localhost:3000/api/posts/')
+      .then((response) => response.json())
+      .then(data => this.posts = data)
+      .catch(err => console.log(err.message))
   }
 };
 </script>

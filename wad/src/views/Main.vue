@@ -5,9 +5,12 @@
 
     <AllPosts />
 
-    <div class="reset-container">
-      <button class="reset-btn" @click="resetAllLikes">
-        Reset all likes
+    <div class="button-container">
+      <button class="add-btn" @click="addPost">
+        Add post
+      </button>
+      <button class="delete-btn" @click="deletePost">
+        Delete all
       </button>
     </div>
 
@@ -22,8 +25,9 @@ export default {
   components: { AllPosts },
 
   methods: {
-    resetAllLikes() {
-      this.$store.commit("resetLikes");
+    addPost() {
+      //add button functionality for both
+      this.$store.commit("");
     },
     goToLogin() {
       //this should log out the person as well
@@ -34,9 +38,9 @@ export default {
 </script>
 
 <style scoped>
-.reset-container {
+.button-container {
   display: flex;
-  justify-content: center;
+  justify-content:center;
   margin-top: 30px;
   margin-bottom: 40px;  
 }
@@ -46,7 +50,7 @@ button {
   color: white;
   border: none;
   padding: 12px 18px;
-  margin-top: 30px;
+  margin: 30px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;

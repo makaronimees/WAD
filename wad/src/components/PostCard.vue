@@ -1,37 +1,29 @@
 <template>
-  <div class="vue-post-card">
+  <RouterLink :to="{ name: 'APost', params: { id: post.id } }" class="vue-post-card">
     <div class="vue-post-header">
       <div class="vue-post-header-left">
-        <img :src="post.profilePicture" class="vue-profile-pic" />
-        {{ post.authorName }}
+        <img :src="post.profilepicture" class="vue-profile-pic" />
+        {{ post.authorname }}
       </div>
       <span class="vue-date">{{ post.date }}</span>
     </div>
 
-    <img v-if="post.postPicture" 
-         :src="post.postPicture" 
+    <img v-if="post.postpicture" 
+         :src="post.postpicture" 
          class="vue-post-image" />
 
-    <div class="vue-post-caption">{{ post.postCaption }}</div>
+    <div class="vue-post-caption">{{ post.postcaption }}</div>
 
     <div class="vue-post-footer">
-      <button class="vue-like-btn" @click="likePost">
-        👍 {{ post.likes }}
-      </button>
+      
     </div>
-  </div>
+  </RouterLink>
 </template>
 
 <script>
 export default {
   name: "PostCard",
-  props: { post: Object },
-
-  methods: {
-    likePost() {
-      this.$store.commit("incrementLikes", this.post.id);
-    }
-  }
+  props: { post: Object }
 };
 </script>
 
@@ -46,6 +38,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-decoration: none;
 }
 
 .vue-post-header {
