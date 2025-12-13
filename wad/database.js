@@ -41,7 +41,8 @@ const createTblQuery = `
 	    "authorname" VARCHAR(200) NOT NULL,
         "profilepicture" VARCHAR(200) NOT NULL,
         "postpicture" VARCHAR(200),
-	    "postcaption" VARCHAR(200) NOT NULL
+	    "postcaption" VARCHAR(200) NOT NULL,
+        "date" VARCHAR(200)
     );`;
 
 // A function to execute the previous query   

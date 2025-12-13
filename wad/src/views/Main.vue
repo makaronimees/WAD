@@ -13,6 +13,16 @@
         Delete all
       </button>
     </div>
+     <div class="main-buttons">
+      <button class="add-btn" @click="goToAddPost">
+        Add a post
+      </button>
+      <button class="delete-btn" @click="deleteAll">
+        Delete all posts
+      </button>
+    </div>
+    
+    
 
   </div>
 </template>
@@ -32,7 +42,21 @@ export default {
     goToLogin() {
       //this should log out the person as well
       this.$router.push('/login')
-    }
+    },
+     goToAddPost() {
+            this.$router.push('/addpost')
+        },
+      deleteAll() {
+          fetch(`http://localhost:3000/api/posts/`, {
+              method: "DELETE", headers: {"Content-Type": "application/json"},})
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                this.$router.push('/');
+                })
+            .catch((e) => {console.log(e); }); },
+
+
   }
 }
 </script>
