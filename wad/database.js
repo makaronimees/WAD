@@ -40,7 +40,8 @@ const createTblQuery = `
 	    "id" SERIAL PRIMARY KEY,         
 	    "title" VARCHAR(200) NOT NULL,
 	    "body" VARCHAR(200) NOT NULL,
-        "urllink" VARCHAR(200)  
+        "urllink" VARCHAR(200),
+        "date" VARCHAR(200)
     );`;
 
 // A function to execute the previous query   

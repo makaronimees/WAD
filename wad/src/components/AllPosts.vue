@@ -1,29 +1,37 @@
 <template>
-  <div class="all-posts">
-    <PostCard
-      v-for="post in posts"
-      :key="post.id"
-      :post="post"
-    />
-  </div>
+    <div class="all-posts">
+        <div id="post-list">
+            <h1>All Posts</h1>
+            <ul>
+                <div class="item" v-for="post in posts" :key="post.id">
+                    <router-link class="singlepost" :to="{ name: 'Post', params: { id: post.id } }">
+                        <span class="title"> <b>Title:</b> {{ post.title }} </span><br />
+                        <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
+                        <span class="url"> <b>Url:</b> {{ post.urllink }} </span> <br />
+                    </router-link>
+                </div>
+            </ul>
+        </div>
+       
+    </div>
 </template>
-
 <script>
-import { mapGetters } from "vuex";
-import PostCard from "./PostCard.vue";
 
 export default {
-  name: "AllPosts",
-
-  components: {
-    PostCard
-  },
-
-  computed: {
-    ...mapGetters(["allPosts"]),
-    posts() {
-      return this.allPosts;
-    }
-  }
-};
+    name: "AllPosts",
+    data() { return {posts:[],};},
+    methods: {
+        fetchPosts() {
+            fetch(`http://localhost:3000/api/posts/`)
+            .then((response) => response.json())
+            .then((data) => (this.posts = data))
+            .catch((err) => console.log(err.message));
+        },
+       
+    
+    },
+    mounted() {
+        this.fetchPosts();
+        console.log("mounted");
+    },};
 </script>
