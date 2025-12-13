@@ -3,7 +3,7 @@
 
     <button @click="goToLogin"> Logout </button>
 
-    <AllPosts2 />
+    <AllPosts />
 
      <div class="button-container">
       <button class="add-btn" @click="goToAddPost">
@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import AllPosts2 from '@/components/AllPosts2.vue';
+import AllPosts from '@/components/AllPosts.vue';
 
 export default {
   name: 'Main',
-  components: { AllPosts2 },
+  components: { AllPosts },
 
   methods: {
     goToLogin() {
