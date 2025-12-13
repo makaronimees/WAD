@@ -9,7 +9,7 @@
 <script>
 export default {
     name: "AddPost",
-        data() {return { post: {authorName: "Kriset", date: "", profilePicture: "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png", postCaption: "" }, }; },
+        data() {return { post: {authorName: "Kriset", date: "", profilePicture: "https://raw.githubusercontent.com/makaronimees/WAD/main/res/images/pfp.png", postCaption: "testing" }, }; },
     methods: {
         addPost() {
             var postcaption = document.getElementById("postcaption").value
