@@ -4,7 +4,7 @@
     <h3>A Post</h3>
     <p> Post body: {{ post.postcaption }}</p>
     <label for="body">Edit body: </label>
-    <input name="body" type="text" id="postcaption" required v-model="postcaption" />
+    <input name="body" type="text" id="postcaption" required v-model="postcaption" placeholder="New post body.." />
 </div> 
 <div>
     <button @click="updatePost" class="updatePost">Update</button>
@@ -16,7 +16,7 @@
 
 export default {
     name: "APost",
-    data() {return {post: {id: "", authorname: "", date: "", postcaption: "", postfooter: "", postpicture: "", }, }; },
+    data() {return {post: {id: "", authorname: "",  postcaption: "", date: "", }, }; },
     methods: {
         fetchAPost(id) {
             fetch(`http://localhost:3000/api/posts/${id}`)
@@ -25,6 +25,7 @@ export default {
             .catch((err) => console.log(err.message));},
         
         updatePost() {
+            
             this.post.postcaption = document.getElementById("postcaption").value;
             fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
                 method: "PUT", headers: { "Content-Type": "application/json", },

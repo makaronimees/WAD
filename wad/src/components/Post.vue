@@ -8,7 +8,7 @@
 <label for="url">postFooter: </label>
 <input name="url" type="text" id="footer" required v-model="post.postFooter" />
 <label for="url">postImageHtml: </label>
-<input name="url" type="text" id="image" required v-model="post.postImageHtml" />
+
 </div> 
 
 </template>
@@ -16,7 +16,7 @@
 <script>
 export default {
   name: "Post",
-  data() {return {post: {id: "", authorName: "", date: "", postCaption: "", postFooter: "", postImageHtml: ""}, }; },
+  data() {return {post: {id: "", authorName: "", postCaption: "", date: ""}, }; },
   methods: {
     fetchAPost(id) {
       fetch(`http://localhost:3000/posts/${id}`)

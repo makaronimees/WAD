@@ -2,15 +2,11 @@
   <RouterLink :to="{ name: 'EditPost', params: { id: post.id } }" class="vue-post-card">
     <div class="vue-post-header">
       <div class="vue-post-header-left">
-        <img :src="post.profilepicture" class="vue-profile-pic" />
+    
         {{ post.authorname }}
       </div>
       <span class="vue-date">{{ post.date }}</span>
     </div>
-
-    <img v-if="post.postpicture" 
-         :src="post.postpicture" 
-         class="vue-post-image" />
 
     <div class="vue-post-caption">{{ post.postcaption }}</div>
 
@@ -61,7 +57,7 @@ export default {
 
 .vue-date {
   font-size: 12px;
-  color: #555;
+  color:black;
 }
 
 .vue-post-image {
