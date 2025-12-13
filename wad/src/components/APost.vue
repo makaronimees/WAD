@@ -24,6 +24,7 @@ export default {
             .catch((err) => console.log(err.message));},
         
         updatePost() {
+            this.post.postcaption = document.getElementById("postcaption").value;
             fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
                 method: "PUT", headers: { "Content-Type": "application/json", },
                 body: JSON.stringify(this.post),})

@@ -39,9 +39,11 @@ export default {
           .then((response) => response.json())
           .then((data) => {
               console.log(data);
-              this.$router.push('/');
               })
-          .catch((e) => {console.log(e); }); },
+          .catch((e) => {console.log(e); 
+          });
+        this.$router.go();
+        },
   }
 }
 </script>

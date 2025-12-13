@@ -86,7 +86,7 @@ app.put('/api/posts/:id', async(req, res) => {
         const post = req.body;
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posttable SET (title, body, urllink) = ($2, $3, $4) WHERE id = $1", [id, post.title, post.body, post.urllink]
+            "UPDATE posttable SET postcaption = $2 WHERE id = $1", [id, post.postcaption]
         );
         res.json(updatepost);
     } catch (err) {
@@ -104,6 +104,20 @@ app.delete('/api/posts/:id', async(req, res) => {
         console.log("delete a post request has arrived");
         const deletepost = await pool.query(
             "DELETE FROM posttable WHERE id = $1", [id]
+        );
+        res.json(deletepost);
+    } catch (err) {
+        console.error(err.message);
+    }
+}); 
+
+//delete ALL
+app.delete('/api/posts/', async(req, res) => {
+    try {
+        //const post = req.body; // we do not need a body for a delete request
+        console.log("delete a post request has arrived");
+        const deletepost = await pool.query(
+            "DELETE FROM posttable",
         );
         res.json(deletepost);
     } catch (err) {
