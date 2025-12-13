@@ -2,7 +2,8 @@
 <div class="A Post">
     <div id="form">
     <h3>A Post</h3>
-    <label for="body">Body: </label>
+    <p> Post body: {{ post.postcaption }}</p>
+    <label for="body">Edit body: </label>
     <input name="body" type="text" id="postcaption" required v-model="postcaption" />
 </div> 
 <div>
