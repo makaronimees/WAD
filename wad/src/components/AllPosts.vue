@@ -4,11 +4,11 @@
             <h1>All Posts</h1>
             <ul>
                 <div class="item" v-for="post in posts" :key="post.id">
-                    <router-link class="singlepost" :to="{ name: 'Post', params: { id: post.id } }">
+                    <a class="singlepost" :href="'/api/APost/' + post.id" target="_blank">
                         <span class="title"> <b>Title:</b> {{ post.title }} </span><br />
                         <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
                         <span class="url"> <b>Url:</b> {{ post.urllink }} </span> <br />
-                    </router-link>
+                    </a>
                 </div>
             </ul>
         </div>
