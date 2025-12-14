@@ -16,7 +16,7 @@ const pool = new Pool({
     password: "secured", // Enter your password here
     database: "Postit", //Try to use the same name for your database
     host: "localhost",
-    port: "5432" //for me the port is this, default is 5432 
+    port: "5433" //for me the port is this, default is 5432 
 });
 
 

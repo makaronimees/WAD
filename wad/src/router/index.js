@@ -5,12 +5,21 @@ import Login from '../views/Login.vue'
 import Contact from '../views/Contacts.vue'
 import EditPost from '../views/EditPost.vue'
 import AddAPost from '../views/AddAPost.vue'
+import auth from '@/auth'
 
 const routes = [
   {
     path: '/',
     name: 'Main',
-    component: Main
+    component: Main,
+    beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/login')
+            } else {
+                next();
+            }
+        }
   },
   {
     path: '/signup',
@@ -31,12 +40,28 @@ const routes = [
     path: '/post/:id',
     name: 'EditPost',
     component: EditPost,
-    props: true
+    props: true,
+    beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/login')
+            } else {
+                next();
+            }
+        }
   },
   {
     path: '/addpost',
     name: 'AddAPost',
-    component: AddAPost
+    component: AddAPost,
+    beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/login')
+            } else {
+                next();
+            }
+        }
   }
 ]
 

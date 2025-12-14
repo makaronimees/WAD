@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:8080', credentials: true }));
 //all of this copied from course material
 //The express.json() function is a built-in middleware function in Express. 
 //It parses incoming requests with JSON payloads and is based on body-parser.
@@ -79,6 +79,39 @@ app.post('/api/login', async (req, res) => {
     console.error(err.message);
     res.status(500).json({ message: 'Server error' });
   }
+});
+
+
+//auth check
+app.get('/api/authenticate', (req, res) => {
+    console.log('authentication request received.');
+
+    const authHeader = req.headers.authorization; 
+    let authenticated = false;
+
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        console.log('no token or incorrect format.');
+        return res.status(200).send({ "authenticated": authenticated }); // authenticated = false
+    }
+
+    //actual token string
+    const token = authHeader.split(' ')[1]; 
+
+    try {
+        const decoded = jwt.verify(token, JWT_SECRET);
+        // no error was thrown, the token is valid.
+        authenticated = true;
+        console.log('user is authenticated.');
+        
+        return res.status(200).send({ 
+            "authenticated": authenticated, 
+            user: { id: decoded.id, email: decoded.email } 
+        });
+
+    } catch (err) {
+        console.log('token verification failed:', err.message);
+        return res.status(200).send({ "authenticated": authenticated }); 
+    }
 });
 
 // Task 1, make a post

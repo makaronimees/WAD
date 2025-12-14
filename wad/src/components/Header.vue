@@ -1,8 +1,7 @@
 <template>
 <div class="header">
   <h2>PostIT</h2>
-  <!-- this should only be true if the person isn't logged in yet, otherwise it isn't visible -->
-  <div v-if="true"> <button class="loginButton" @click="goToLogin">Login</button> </div>
+
   <nav>
     <router-link to="/">Main</router-link> |
     <router-link to="/contacts">Contacts</router-link>
@@ -38,19 +37,18 @@ export default {
 nav {
   padding: 30px;
   font-weight: bold;
-  
-
 }
 
 nav a {
     padding: 10px 15px;
     text-align: center;
     color: #000000;
+    text-decoration: none;
 }
 
 nav a:hover {
-    background-color: #7ebeb6;
-    color: #092747;
+    background-color: #554f83;
+    color: cornsilk;
     border-radius:5px ;
 }
 

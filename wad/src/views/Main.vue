@@ -1,11 +1,11 @@
 <template>
   <div class="main">
 
-    <button @click="goToLogin"> Logout </button>
+    <button v-if="authResult" @click="goToLogin"> Logout </button>
 
-  <AllPosts />
+    <AllPosts />
 
-     <div class="button-container">
+    <div class="button-container">
       <button class="add-btn" @click="goToAddPost">
         Add a post
       </button>
@@ -13,17 +13,25 @@
         Delete all posts
       </button>
     </div>
-     
+
 
   </div>
 </template>
 
 <script>
 import AllPosts from '@/components/AllPosts.vue';
+import auth from '@/auth';
 
 export default {
   name: 'Main',
-  components: {  },
+  components: {
+    AllPosts
+  },
+
+  data: function() {
+    return {
+      authResult: auth.authenticated()}
+  },
 
   methods: {
     goToLogin() {
@@ -66,13 +74,5 @@ button {
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-}
-
-.reset-btn {
-  background-color: #ff6b6b;
-}
-
-.reset-btn:hover {
-  background-color: #ff4a4a;
 }
 </style>

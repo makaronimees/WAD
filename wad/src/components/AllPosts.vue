@@ -25,8 +25,8 @@ export default {
 
   mounted() {
       fetch('http://localhost:3000/api/posts/')
-      .then((response) => response.json())
-      .then(data => this.posts = data)
+      .then((response) => response.json())  
+      .then((data) => (this.posts = data))
       .catch(err => console.log(err.message))
   }
 };

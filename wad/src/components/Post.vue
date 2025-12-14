@@ -2,12 +2,11 @@
 
 <div id="mjau">
 <label for="title">authorName: </label>
-<input name="type" type="text" id="author" required v-model="post.authorName" />
+<input name="type" type="text" id="author" required v-model="post.authorname" />
 <label for="body">postCaption: </label>
-<input name="body" type="text" id="caption" required v-model="post.postCaption" />
-<label for="url">postFooter: </label>
-<input name="url" type="text" id="footer" required v-model="post.postFooter" />
-<label for="url">postImageHtml: </label>
+<input name="body" type="text" id="caption" required v-model="post.postcaption" />
+<label for="body">date: </label>
+<input name="body" type="text" id="date" required v-model="post.date" />
 
 </div> 
 
@@ -16,12 +15,13 @@
 <script>
 export default {
   name: "Post",
-  data() {return {post: {id: "", authorName: "", postCaption: "", date: ""}, }; },
+  data() {return {post: {id: "", authorname: "", postcaption: "", date: ""}, }; },
   methods: {
     fetchAPost(id) {
-      fetch("http://localhost:3000/api/posts")
+      fetch("http://localhost:3000/api/posts/")
       .then((response) => response.json())
-      .then((data) => (this.post = data))
+      .then((data) => (this.post = data),
+            console.log(data))
       .catch((err) => console.log(err.message));},
   mounted() { this.fetchAPost(this.$route.params.id);},}
 }

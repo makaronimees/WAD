@@ -1,8 +1,8 @@
 <template>
   <div class="login">
-    <Header />
+
     <LoginForm />
-    <Footer />
+
   </div>
 </template>
 

@@ -16,6 +16,7 @@ export default {
 .footer{
     border: 1px solid #646174;
     background-color: #7871AA;
+    color: cornsilk;
     border-radius: 5px;
     text-align: center;
 }
