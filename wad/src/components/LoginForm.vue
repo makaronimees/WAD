@@ -1,17 +1,23 @@
 <template>
 
 <div class="loginform">
-<form id="logIn" @submit="checkPassword"> 
-    <p>Email: <input id="email" v-model="email" type="text" required></p>
-    <p>Password: <input id="password" v-model="password" type="text" required minlength="8" maxlength="15"></p>
-    
+<form id="logIn" @submit.prevent="handleLogin">
+        <p class="field">
+      <label>Email:</label>
+      <input v-model="email" type="text" required>
+    </p>
+
+    <p class="field">
+      <label>Password:</label>
+      <input v-model="password" type="password" required minlength="8" maxlength="15">
+    </p>    
     <p v-if="errors.length">
     <b>Login unsuccessful! <br>
         Please check your email and password</b>
   </p>
     <button type="submit" value="Submit">Login</button>
     Or
-    <button @click="goToSignup">Signup</button>
+    <button type="button" @click="goToSignup">Signup</button>
 
 </form>
 </div>
@@ -20,27 +26,43 @@
 
 
 <script>
-//checking inputs
+import axios from "axios";
+
 export default {
-  name: 'Form',
+  name: 'LoginForm',
   data() {
-    return{
-      email:"",
-      password:"",
-      errors:[]
-    }
+    return {
+      email: "",
+      password: "",
+      errors: []
+    };
   },
-  methods:{
+  methods: {
     goToSignup() {
-        this.$router.push('/signup')
+      this.$router.push({ name: 'Signup' });
     },
-    checkPassword(e) {
-      //check the database for the credentials
+
+    async handleLogin() {
+      this.errors = [];
+
+      try {
+        const res = await axios.post("http://localhost:3000/api/login", {
+          email: this.email,
+          password: this.password
+        });
+
+        
+        localStorage.setItem("token", res.data.token);
+        if (res.data.user) localStorage.setItem("user", JSON.stringify(res.data.user));
+
+        this.$router.push({ name: "Main" });
+      } catch (err) {
+
+        this.errors.push("Login unsuccessful! Please check your email and password");
+      }
     }
   }
-
-}
-
+};
 </script>
 
 
@@ -79,6 +101,16 @@ form > p > input {
     min-height: 20px;
     color:gray;
     
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 
 </style>

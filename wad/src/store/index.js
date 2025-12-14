@@ -36,7 +36,7 @@ export default createStore({
 
   actions: {
     async fetchPosts({ commit }) {
-      const res = await fetch("http://localhost:3000/posts");
+      const res = await fetch("http://localhost:3000/api/posts");
       const data = await res.json();
       commit("setPosts", data); 
     }

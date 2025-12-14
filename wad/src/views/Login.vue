@@ -1,19 +1,15 @@
 <template>
-
-<div class="login">
-  
-    
-</div>
-
-<LoginForm/>
-
+  <div class="login">
+    <Header />
+    <LoginForm />
+    <Footer />
+  </div>
 </template>
-
 
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import LoginForm from '../components/LoginForm.vue';
+import LoginForm from '@/components/LoginForm.vue';
 
 export default {
   name: 'Login',
@@ -21,8 +17,6 @@ export default {
     Header,
     LoginForm,
     Footer
-    
   }
-}
-
+};
 </script>

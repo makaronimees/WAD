@@ -1,10 +1,12 @@
 
-//all of this copied from course materials
 
 const express = require('express');
 const pool = require('./database');
 const cors = require('cors')
 const port = process.env.PORT || 3000;
+const JWT_SECRET = 'change_me_for_hw';
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
@@ -23,6 +25,61 @@ app.use(express.json());
 // The await keyword makes the function pause the execution and wait for a resolved promise before it continues
 // Syntax:  "async(req, res) => {let value = await promise}"
 
+// ---------- AUTH: SIGNUP ----------
+app.post('/api/signup', async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) return res.status(400).json({ message: 'Email and password required' });
+
+  try {
+    const exists = await pool.query('SELECT id FROM users WHERE email = $1', [email]);
+    if (exists.rows.length > 0) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    const hash = await bcrypt.hash(password, 10);
+
+    const created = await pool.query(
+      'INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id, email',
+      [email, hash]
+    );
+
+    const user = created.rows[0];
+    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '1h' });
+
+    res.json({ token, user });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// ---------- AUTH: LOGIN ----------
+app.post('/api/login', async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) return res.status(400).json({ message: 'Email and password required' });
+
+  try {
+    const found = await pool.query(
+      'SELECT id, email, password_hash FROM users WHERE email = $1',
+      [email]
+    );
+
+    if (found.rows.length === 0) {
+      return res.status(400).json({ message: 'Invalid credentials' });
+    }
+
+    const user = found.rows[0];
+    const ok = await bcrypt.compare(password, user.password_hash);
+    if (!ok) return res.status(400).json({ message: 'Invalid credentials' });
+
+    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '1h' });
+
+    res.json({ token, user: { id: user.id, email: user.email } });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 // Task 1, make a post
 app.post('/api/posts', async(req, res) => {

@@ -3,7 +3,7 @@
 
     <button @click="goToLogin"> Logout </button>
 
-    <AllPosts />
+  <AllPosts />
 
      <div class="button-container">
       <button class="add-btn" @click="goToAddPost">
@@ -23,13 +23,14 @@ import AllPosts from '@/components/AllPosts.vue';
 
 export default {
   name: 'Main',
-  components: { AllPosts },
+  components: {  },
 
   methods: {
     goToLogin() {
-      //this should log out the person as well
-      this.$router.push('/login')
-    },
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      this.$router.push({ name: 'Login' });
+  },
     goToAddPost() {
           this.$router.push('/addpost')
     },

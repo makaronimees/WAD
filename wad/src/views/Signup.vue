@@ -1,19 +1,15 @@
 <template>
-
-<div class="signup">
-  
-    
-</div>
-
-<Form/>
-
+  <div class="signup">
+    <Header />
+    <Form />
+    <Footer />
+  </div>
 </template>
 
-
 <script>
-import Form from '@/components/Form.vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import Form from '@/components/Form.vue';
 
 export default {
   name: 'Signup',
@@ -21,8 +17,6 @@ export default {
     Header,
     Form,
     Footer
-    
   }
-}
-
+};
 </script>

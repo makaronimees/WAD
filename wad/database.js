@@ -16,7 +16,7 @@ const pool = new Pool({
     password: "secured", // Enter your password here
     database: "Postit", //Try to use the same name for your database
     host: "localhost",
-    port: "5433" //for me the port is this, default is 5432 
+    port: "5432" //for me the port is this, default is 5432 
 });
 
 
@@ -50,4 +50,19 @@ execute(createTblQuery).then(result => {
     }
 });
 
+const createUsersTblQuery = `
+  CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL
+  );
+`;
+
+execute(createUsersTblQuery).then(result => {
+  if (result) {
+    console.log('If does not exists, create the "users" table');
+  }
+});
+
 module.exports = pool;
+

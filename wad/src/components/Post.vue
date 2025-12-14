@@ -19,7 +19,7 @@ export default {
   data() {return {post: {id: "", authorName: "", postCaption: "", date: ""}, }; },
   methods: {
     fetchAPost(id) {
-      fetch(`http://localhost:3000/posts/${id}`)
+      fetch("http://localhost:3000/api/posts")
       .then((response) => response.json())
       .then((data) => (this.post = data))
       .catch((err) => console.log(err.message));},
