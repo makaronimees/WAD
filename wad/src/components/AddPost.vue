@@ -9,9 +9,13 @@
 <script>
 export default {
     name: "AddPost",
-        data() {return { post: {authorName: "Kriset", postCaption: "",date: "", }, }; },
+        data() {return { post: {authorName: "", postCaption: "",date: "", }, }; },
     methods: {
         addPost() {
+            // Get logged-in user
+            const user = JSON.parse(localStorage.getItem('user'));
+            this.post.authorName = user ? user.email : '';
+            
             // Get current date
             var currentDate = new Date();
             var months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
